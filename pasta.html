@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cheesy Garlic Pasta Recipe</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .recipe-box {
+      max-width: 700px;
+      background: #ffffff;
+      padding: 30px;
+      margin: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-left: 8px solid #ff7043;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d9534f;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #ff7043;
+      color: white;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #444;
+      border-bottom: 2px solid #f4b183;
+      padding-bottom: 6px;
+    }
+
+    .content {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .content.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    ul, ol {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    ul li::marker {
+      color: #ff7043;
+    }
+
+    ol li::marker {
+      color: #f57242;
+      font-weight: bold;
+    }
+
+    .note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="recipe-box">
+    <h1>🧀🧀Cheesy Garlic Pasta🧀🧀</h1>
+    
+    <button onclick="toggleSection('ingredients')">Toggle Ingredients</button>
+    <div id="ingredients" class="content">
+      <h2>Ingredients</h2>
+      <ul>
+        <li>1/2 lb Pasta of Choice (Regular or GF)</li>
+        <li>2 Tbsp Butter</li>
+        <li>5–6 Cloves Minced Garlic</li>
+        <li>1 Tbsp Each: Minced Parsley, Thyme, Rosemary</li>
+        <li>2 1/2 Cups Heavy Cream</li>
+        <li>1 1/2 Cups Shredded Cheese (Mozzarella and/or White Cheddar)</li>
+        <li>1/2 Cup Parmesan Cheese</li>
+        <li>Salt and Pepper to Taste</li>
+        <li>Optional: Red Pepper Flake</li>
+      </ul>
+    </div>
+
+    <button onclick="toggleSection('instructions')">Toggle Instructions</button>
+    <div id="instructions" class="content">
+      <h2>Instructions</h2>
+      <ol>
+        <li>Cook pasta to preferred doneness and set aside.</li>
+        <li>In a large skillet, add your butter. Toss in your garlic and cook until fragrant and the butter slightly browns.</li>
+        <li>Mix, and add your minced herbs. Stir for about 1 minute. Reduce heat to low and pour in your heavy cream. When the cream is warm but not too hot, add your cheese and stir. Let this simmer on low until the sauce is combined. This will get nice and thick.</li>
+        <li>Toss in your cooked pasta and sprinkle with parmesan cheese! Serve immediately and enjoy!</li>
+      </ol>
+      <div class="note">Tip: For extra spice, add red pepper flakes while cooking the garlic.</div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(id) {
+      const section = document.getElementById(id);
+      if (section.classList.contains('show')) {
+        section.classList.remove('show');
+        setTimeout(() => {
+          section.style.display = 'none';
+        }, 600);
+      } else {
+        section.style.display = 'block';
+        setTimeout(() => {
+          section.classList.add('show');
+        }, 10);
+      }
+    }
+  </script>
+</body>
+</html>
